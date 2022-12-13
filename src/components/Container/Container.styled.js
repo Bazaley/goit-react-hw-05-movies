@@ -8,11 +8,11 @@ export const StyledContainer = styled.div`
     max-width: 320px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
     width: 768px;
   }
 
-  @media screen and (min-width: 1200px) {
+  /* @media screen and (min-width: 1200px) {
     width: 1200px;
-  }
+  } */
 `;

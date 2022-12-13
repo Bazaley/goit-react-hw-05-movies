@@ -1,3 +1,5 @@
+import { Heading } from './PageHeading.styled';
+
 export const PageHeading = ({ text }) => {
-  return <h1>{text}</h1>;
+  return <Heading>{text}</Heading>;
 };

@@ -1,10 +1,20 @@
+import { TrendingMovieItem } from 'components/TrendingMovieItem/TrendingMovieItem';
+import { List } from './TrendingMoviesList.styled';
+
 export const TrendingMoviesList = ({ movies }) => {
   return (
-    <ul>
+    <List>
       {movies &&
-        movies.map(({ title, id }) => {
-          return <li key={id}>{title}</li>;
+        movies.map(({ id, poster_path, title }) => {
+          return (
+            <TrendingMovieItem
+              key={id}
+              poster={poster_path}
+              title={title}
+              movieId={id}
+            />
+          );
         })}
-    </ul>
+    </List>
   );
 };
