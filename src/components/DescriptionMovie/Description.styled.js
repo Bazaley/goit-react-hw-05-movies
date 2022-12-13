@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Box = styled.div`
   display: flex;
+  margin-bottom: 20px;
 `;
 
 export const Img = styled.img`
