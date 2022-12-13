@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import { fetchMovieById } from 'services/requestsForMovies';
 import { DescriptionMovie } from 'components/DescriptionMovie/DescriptionMovie';
 import { AdditionalInformation } from 'components/AdditionalInformation/AdditionalInformation';
@@ -21,6 +21,7 @@ export const MovieDetails = () => {
         <>
           <DescriptionMovie movie={movie} />
           <AdditionalInformation />
+          <Outlet />
         </>
       )}
     </>

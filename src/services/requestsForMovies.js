@@ -18,3 +18,19 @@ export const fetchMovieById = async movieId => {
     },
   });
 };
+
+export const fetchCast = async movieId => {
+  return await axios.get(`${BASE_URL}movie/${movieId}/credits`, {
+    params: {
+      api_key: API_KEY,
+    },
+  });
+};
+
+export const fetchMovieReviews = async movieId => {
+  return await axios.get(`${BASE_URL}movie/${movieId}/reviews`, {
+    params: {
+      api_key: API_KEY,
+    },
+  });
+};
