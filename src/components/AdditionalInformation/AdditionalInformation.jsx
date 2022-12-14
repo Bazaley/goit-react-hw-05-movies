@@ -16,6 +16,9 @@ export const AdditionalInformation = () => {
         <Item>
           <NavLinkStyled to="reviews"> Reviews</NavLinkStyled>
         </Item>
+        <Item>
+          <NavLinkStyled to="trailer"> Trailer</NavLinkStyled>
+        </Item>
       </ul>
     </Box>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { PageHeading } from 'components/PageHeading/PageHeading';
 import { fetchTrandingMovies } from 'services/requestsForMovies';
-import { TrendingMoviesList } from 'components/TrendingMoviesList/TrendingMoviesList';
+import { MoviesList } from 'components/MoviesList/MoviesList';
 
 export const Home = () => {
   const [movies, setMovies] = useState(null);
@@ -22,7 +22,7 @@ export const Home = () => {
   return (
     <>
       <PageHeading text="Trending today" />
-      <TrendingMoviesList movies={movies} />
+      <MoviesList movies={movies} />
     </>
   );
 };

@@ -13,7 +13,6 @@ export const Cast = () => {
         data: { cast },
       } = await fetchCast(movieId);
       setCast(cast);
-      console.log(cast);
     }
     fetch();
   }, [movieId]);

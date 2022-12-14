@@ -15,6 +15,7 @@ export const fetchMovieById = async movieId => {
   return await axios.get(`${BASE_URL}movie/${movieId}`, {
     params: {
       api_key: API_KEY,
+      append_to_response: 'videos',
     },
   });
 };
@@ -31,6 +32,15 @@ export const fetchMovieReviews = async movieId => {
   return await axios.get(`${BASE_URL}movie/${movieId}/reviews`, {
     params: {
       api_key: API_KEY,
+    },
+  });
+};
+
+export const fetchMovieBySearchQuery = async query => {
+  return await axios.get(`${BASE_URL}search/movie`, {
+    params: {
+      api_key: API_KEY,
+      query,
     },
   });
 };

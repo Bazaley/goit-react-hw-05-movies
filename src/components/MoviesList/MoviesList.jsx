@@ -1,13 +1,13 @@
-import { TrendingMovieItem } from 'components/TrendingMovieItem/TrendingMovieItem';
-import { List } from './TrendingMoviesList.styled';
+import { MovieItem } from 'components/MovieItem/MovieItem';
+import { List } from './MoviesList.styled';
 
-export const TrendingMoviesList = ({ movies }) => {
+export const MoviesList = ({ movies }) => {
   return (
     <List>
       {movies &&
         movies.map(({ id, poster_path, title }) => {
           return (
-            <TrendingMovieItem
+            <MovieItem
               key={id}
               poster={poster_path}
               title={title}
