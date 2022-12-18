@@ -6,8 +6,9 @@ export const LinkStyled = styled(Link)`
   align-items: center;
   justify-content: center;
   width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  height: 30px;
+  margin-bottom: 20px;
+  border-radius: 4px;
   background-color: blue;
   text-decoration: none;
   color: white;

@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { fetchCast } from 'services/requestsForMovies';
 import { CastList } from 'components/CastList/CastList';
 
+import { Element } from 'react-scroll';
+
 export const Cast = () => {
   const [cast, setCast] = useState(null);
   const { movieId } = useParams();
@@ -16,5 +18,9 @@ export const Cast = () => {
     }
     fetch();
   }, [movieId]);
-  return <CastList cast={cast} />;
+  return (
+    <Element name="cast">
+      <CastList cast={cast} />
+    </Element>
+  );
 };

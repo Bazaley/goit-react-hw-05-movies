@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { QueryForm } from 'components/QueryForm/QueryForm';
 import { fetchMovieBySearchQuery } from 'services/requestsForMovies';
 import { useSearchParams, Outlet } from 'react-router-dom';
+import { PageHeading } from 'components/PageHeading/PageHeading';
 
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
@@ -24,6 +25,7 @@ export const Movies = () => {
   }, [query]);
   return (
     <>
+      <PageHeading text="Find your movie" />
       <QueryForm />
       {movies && (
         <>

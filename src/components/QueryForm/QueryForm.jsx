@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Wrapper, Input, Button } from './QueryForm.styled';
+import { BsSearch } from 'react-icons/bs';
 
 export const QueryForm = () => {
   const [value, setValue] = useState('');
@@ -19,9 +21,13 @@ export const QueryForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={value} onChange={handleInput} />
+      <Wrapper>
+        <Input type="text" value={value} onChange={handleInput} />
 
-      <button type="submit">Search</button>
+        <Button type="submit">
+          <BsSearch />
+        </Button>
+      </Wrapper>
     </form>
   );
 };
