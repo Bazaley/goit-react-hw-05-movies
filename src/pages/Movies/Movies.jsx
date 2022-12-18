@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import { QueryForm } from 'components/QueryForm/QueryForm';
 import { fetchMovieBySearchQuery } from 'services/requestsForMovies';
-import { useSearchParams, useLocation, Outlet } from 'react-router-dom';
+import { useSearchParams, Outlet } from 'react-router-dom';
 
 import { MoviesList } from 'components/MoviesList/MoviesList';
 
 export const Movies = () => {
-  const [query, setQuery] = useState('');
   const [movies, setMovies] = useState(null);
-  const [searchParams, setSearchParams] = useSearchParams();
-
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query');
   useEffect(() => {
     if (!query) {
       return;
@@ -18,15 +17,14 @@ export const Movies = () => {
       const {
         data: { results },
       } = await fetchMovieBySearchQuery(query);
-      setSearchParams({ query });
+
       setMovies(results);
-      console.log(movies);
     }
     fetch();
-  }, [query, setSearchParams]);
+  }, [query]);
   return (
     <>
-      <QueryForm setQuery={setQuery} />
+      <QueryForm />
       {movies && (
         <>
           <MoviesList movies={movies} />

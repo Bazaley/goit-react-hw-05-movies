@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-export const QueryForm = ({ setQuery }) => {
+export const QueryForm = () => {
   const [value, setValue] = useState('');
+  const [, setSearchParams] = useSearchParams();
 
   const handleInput = e => {
     setValue(e.target.value);
@@ -9,7 +11,9 @@ export const QueryForm = ({ setQuery }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setQuery(value);
+
+    setSearchParams({ query: value });
+
     setValue('');
   };
 

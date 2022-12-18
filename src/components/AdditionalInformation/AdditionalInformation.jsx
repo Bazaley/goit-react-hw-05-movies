@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import {
   Box,
   Paragraph,
@@ -6,18 +7,25 @@ import {
 } from './AdditionalInformation.styled';
 
 export const AdditionalInformation = () => {
+  const location = useLocation();
   return (
     <Box>
       <Paragraph>Additional information</Paragraph>
       <ul>
         <Item>
-          <NavLinkStyled to="cast">Cast</NavLinkStyled>
+          <NavLinkStyled to="cast" state={{ from: location.state.from }}>
+            Cast
+          </NavLinkStyled>
         </Item>
         <Item>
-          <NavLinkStyled to="reviews"> Reviews</NavLinkStyled>
+          <NavLinkStyled to="reviews" state={{ from: location.state.from }}>
+            Reviews
+          </NavLinkStyled>
         </Item>
         <Item>
-          <NavLinkStyled to="trailer"> Trailer</NavLinkStyled>
+          <NavLinkStyled to="trailer" state={{ from: location.state.from }}>
+            Trailer
+          </NavLinkStyled>
         </Item>
       </ul>
     </Box>
