@@ -3,9 +3,9 @@ import { List } from './MoviesList.styled';
 
 export const MoviesList = ({ movies }) => {
   return (
-    <List>
-      {movies &&
-        movies.map(({ id, poster_path, title }) => {
+    <>
+      <List>
+        {movies.map(({ id, poster_path, title }) => {
           return (
             <MovieItem
               key={id}
@@ -15,6 +15,7 @@ export const MoviesList = ({ movies }) => {
             />
           );
         })}
-    </List>
+      </List>
+    </>
   );
 };

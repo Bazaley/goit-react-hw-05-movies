@@ -18,7 +18,7 @@ export const AdditionalInformation = () => {
       <List>
         <Item>
           <NavLinkStyled
-            onClick={() => scroll.scrollToBottom()}
+            onClick={() => scroll.scrollMore(window.innerHeight)}
             to="cast"
             state={{ from: location.state.from }}
           >
@@ -27,7 +27,7 @@ export const AdditionalInformation = () => {
         </Item>
         <Item>
           <NavLinkStyled
-            onClick={() => scroll.scrollToBottom()}
+            onClick={() => scroll.scrollMore(window.innerHeight)}
             to="reviews"
             state={{ from: location.state.from }}
           >
@@ -36,7 +36,7 @@ export const AdditionalInformation = () => {
         </Item>
         <Item>
           <NavLinkStyled
-            onClick={() => scroll.scrollToBottom()}
+            onClick={() => scroll.scrollMore(window.innerHeight)}
             to="trailer"
             state={{ from: location.state.from }}
           >

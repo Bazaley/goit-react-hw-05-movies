@@ -3,24 +3,22 @@ import { useParams } from 'react-router-dom';
 import { fetchCast } from 'services/requestsForMovies';
 import { CastList } from 'components/CastList/CastList';
 
-import { Element } from 'react-scroll';
-
-export const Cast = () => {
+const Cast = () => {
   const [cast, setCast] = useState(null);
   const { movieId } = useParams();
 
   useEffect(() => {
-    async function fetch() {
-      const {
-        data: { cast },
-      } = await fetchCast(movieId);
-      setCast(cast);
+    try {
+      async function fetch() {
+        const { data } = await fetchCast(movieId);
+        setCast(data.cast);
+      }
+      fetch();
+    } catch (error) {
+      console.log(error);
     }
-    fetch();
   }, [movieId]);
-  return (
-    <Element name="cast">
-      <CastList cast={cast} />
-    </Element>
-  );
+  return <CastList cast={cast} />;
 };
+
+export default Cast;

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'services/requestsForMovies';
 import { ReviewList } from 'components/ReviewList/ReviewList';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [reviews, setReviews] = useState(null);
   const { movieId } = useParams();
 
@@ -15,6 +15,7 @@ export const Reviews = () => {
       setReviews(results);
     }
     fetch();
-  }, [movieId, reviews]);
+  }, [movieId]);
   return <>{reviews && <ReviewList reviews={reviews} />}</>;
 };
+export default Reviews;

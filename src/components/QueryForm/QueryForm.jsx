@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { Wrapper, Input, Button } from './QueryForm.styled';
 import { BsSearch } from 'react-icons/bs';
+import { Wrapper, Input, Button } from './QueryForm.styled';
 
-export const QueryForm = () => {
+export const QueryForm = ({ setSearchParams, setMovies }) => {
   const [value, setValue] = useState('');
-  const [, setSearchParams] = useSearchParams();
 
   const handleInput = e => {
     setValue(e.target.value);
@@ -15,6 +13,7 @@ export const QueryForm = () => {
     e.preventDefault();
 
     setSearchParams({ query: value });
+    setMovies([]);
 
     setValue('');
   };

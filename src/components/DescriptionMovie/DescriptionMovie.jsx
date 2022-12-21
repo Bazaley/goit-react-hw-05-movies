@@ -14,7 +14,7 @@ export const DescriptionMovie = ({
         <Paragraph head>
           {title} ({release_date.slice(0, 4)})
         </Paragraph>
-        <Paragraph>User Score: {vote_average.toFixed(1) * 10}%</Paragraph>
+        <Paragraph>User Score: {Math.round(vote_average * 10)}%</Paragraph>
         <Paragraph head>Overview</Paragraph>
         <Paragraph>{overview}</Paragraph>
         <Paragraph head>Genres</Paragraph>

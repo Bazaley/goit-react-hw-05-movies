@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
+import { ThreeCircles } from 'react-loader-spinner';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { fetchMovieById } from 'services/requestsForMovies';
 import { DescriptionMovie } from 'components/DescriptionMovie/DescriptionMovie';
 import { AdditionalInformation } from 'components/AdditionalInformation/AdditionalInformation';
-import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { LinkStyled } from './MovieDetails.styled';
+import { LinkStyled, Paragraph } from './MovieDetails.styled';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
 
@@ -30,9 +31,31 @@ export const MovieDetails = () => {
 
           <DescriptionMovie movie={movie} />
           <AdditionalInformation />
-          <Outlet />
+          <Suspense
+            fallback={
+              <>
+                <Paragraph>Please wait...</Paragraph>
+                <ThreeCircles
+                  height="100"
+                  width="100"
+                  color="#0b3bda"
+                  wrapperStyle={{ justifyContent: 'center' }}
+                  wrapperClass=""
+                  visible={true}
+                  ariaLabel="three-circles-rotating"
+                  outerCircleColor=""
+                  innerCircleColor=""
+                  middleCircleColor=""
+                />
+              </>
+            }
+          >
+            <Outlet />
+          </Suspense>
         </>
       )}
     </>
   );
 };
+
+export default MovieDetails;
