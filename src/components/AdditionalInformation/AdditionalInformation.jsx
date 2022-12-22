@@ -20,7 +20,7 @@ export const AdditionalInformation = () => {
           <NavLinkStyled
             onClick={() => scroll.scrollMore(window.innerHeight)}
             to="cast"
-            state={{ from: location.state.from }}
+            state={{ from: location?.state?.from }}
           >
             Cast <MdOutlineCastConnected />
           </NavLinkStyled>
@@ -29,7 +29,7 @@ export const AdditionalInformation = () => {
           <NavLinkStyled
             onClick={() => scroll.scrollMore(window.innerHeight)}
             to="reviews"
-            state={{ from: location.state.from }}
+            state={{ from: location?.state?.from }}
           >
             Reviews <MdOutlineReviews />
           </NavLinkStyled>
@@ -38,7 +38,7 @@ export const AdditionalInformation = () => {
           <NavLinkStyled
             onClick={() => scroll.scrollMore(window.innerHeight)}
             to="trailer"
-            state={{ from: location.state.from }}
+            state={{ from: location?.state?.from }}
           >
             Trailer <GiFilmStrip />
           </NavLinkStyled>
