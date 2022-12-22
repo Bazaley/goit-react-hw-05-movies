@@ -24,7 +24,7 @@ const MovieDetails = () => {
     <>
       {movie && (
         <>
-          <LinkStyled to={location.state.from}>
+          <LinkStyled to={location?.state?.from}>
             <AiOutlineArrowLeft />
             BACK
           </LinkStyled>
