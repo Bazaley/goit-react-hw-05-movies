@@ -11,11 +11,13 @@ export const Input = styled.input`
   width: 100%;
   height: 30px;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
+  background-color: transparent;
   font-size: 18px;
+  color: white;
   text-align: center;
   &:focus {
-    outline: 1px solid green;
+    outline: 1px solid white;
   }
 `;
 
@@ -26,5 +28,6 @@ export const Button = styled.button`
   border: none;
   background-color: transparent;
 
+  color: white;
   cursor: pointer;
 `;

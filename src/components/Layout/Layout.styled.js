@@ -5,5 +5,5 @@ export const Paragraph = styled.p`
   text-align: center;
   font-size: 18px;
   font-weight: 700;
-  color: blue;
+  color: #e1900e;
 `;

@@ -9,13 +9,13 @@ export const StyledNavLink = styled(NavLink)`
   display: inline-block;
   font-size: 18px;
   font-weight: 700;
-  color: black;
+  color: white;
   text-decoration: none;
 
   &:not(:last-child) {
     margin-right: 30px;
   }
   &.active {
-    color: tomato;
+    color: #e1900e;
   }
 `;

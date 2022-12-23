@@ -16,7 +16,7 @@ export const Description = styled.div`
 export const Paragraph = styled.p`
   font-size: ${({ head }) => (head ? '24px' : '18px')};
   font-weight: ${({ head }) => (head ? '700' : '400')};
-
+  color: white;
   &:not(:last-child) {
     margin-bottom: 20px;
   }

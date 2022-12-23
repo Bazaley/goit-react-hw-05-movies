@@ -38,7 +38,7 @@ const MovieDetails = () => {
                 <ThreeCircles
                   height="100"
                   width="100"
-                  color="#0b3bda"
+                  color="#e1900e"
                   wrapperStyle={{ justifyContent: 'center' }}
                   wrapperClass=""
                   visible={true}
